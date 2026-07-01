@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/assets/banner.svg" alt="Shonar Bangla — ASCII wordmark on a Bangladesh-flag-styled banner" width="820"/>
+<img src="banner.svg" alt="Shonar Bangla — ASCII wordmark on a Bangladesh-flag-styled banner" width="820"/>
 
 *A high-performance, open-source dashboard that maps Bangladesh's socioeconomic growth and infrastructure milestones through an interactive, data-driven interface.*
 
