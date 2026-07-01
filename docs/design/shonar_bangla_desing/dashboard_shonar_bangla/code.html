@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SHONAR BANGLA | National Intelligence Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Geist:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=Space+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-surface {
+            background: rgba(18, 26, 38, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .neon-glow-teal {
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+        }
+        .neon-glow-gold {
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        }
+        @keyframes pulse-gold {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        .animate-pulse-gold {
+            animation: pulse-gold 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .chart-container {
+            mask-image: linear-gradient(to right, black 0%, black 100%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#006a71",
+                      "primary": "#e1fdff",
+                      "surface-variant": "#31353c",
+                      "surface-container": "#1c2026",
+                      "on-secondary-fixed-variant": "#544600",
+                      "error-container": "#93000a",
+                      "on-tertiary-fixed": "#141c28",
+                      "inverse-primary": "#00696f",
+                      "on-primary-fixed": "#002022",
+                      "secondary-container": "#ffdb3c",
+                      "surface-container-low": "#181c22",
+                      "on-primary-fixed-variant": "#004f54",
+                      "on-secondary-container": "#725f00",
+                      "surface-container-high": "#262a31",
+                      "on-tertiary": "#29313e",
+                      "secondary-fixed": "#ffe16d",
+                      "on-error-container": "#ffdad6",
+                      "surface-bright": "#353940",
+                      "outline": "#849495",
+                      "surface-tint": "#00dbe7",
+                      "inverse-on-surface": "#2d3137",
+                      "error": "#ffb4ab",
+                      "on-tertiary-fixed-variant": "#3f4755",
+                      "surface-container-highest": "#31353c",
+                      "surface-container-lowest": "#0a0e14",
+                      "on-error": "#690005",
+                      "on-secondary": "#3a3000",
+                      "tertiary-fixed": "#dbe3f4",
+                      "background": "#10141a",
+                      "on-secondary-fixed": "#221b00",
+                      "outline-variant": "#3a494b",
+                      "tertiary-fixed-dim": "#bfc7d7",
+                      "on-surface-variant": "#b9cacb",
+                      "tertiary": "#f5f7ff",
+                      "on-background": "#dfe2eb",
+                      "secondary": "#fff9ef",
+                      "on-primary": "#00363a",
+                      "on-tertiary-container": "#58606e",
+                      "surface": "#10141a",
+                      "inverse-surface": "#dfe2eb",
+                      "primary-fixed": "#74f5ff",
+                      "primary-fixed-dim": "#00dbe7",
+                      "surface-dim": "#10141a",
+                      "on-surface": "#dfe2eb",
+                      "tertiary-container": "#d3dbec",
+                      "secondary-fixed-dim": "#e9c400",
+                      "primary-container": "#00f2ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "gutter-mobile": "16px",
+                      "gutter-desktop": "24px",
+                      "container-max": "1440px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "data-display": ["Geist"],
+                      "body-lg": ["Inter"],
+                      "headline-lg-mobile": ["Space Grotesk"],
+                      "headline-md": ["Space Grotesk"],
+                      "headline-xl": ["Space Grotesk"],
+                      "headline-lg": ["Space Grotesk"],
+                      "label-sm": ["Geist"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "data-display": ["20px", {"lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                      "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-xl border-b border-outline-variant/20 shadow-[0_0_20px_rgba(0,242,255,0.15)] flex justify-between items-center px-margin-desktop py-4 transition-all duration-300 ease-in-out">
+<div class="flex items-center gap-8">
+<span class="font-headline-md text-headline-md font-bold tracking-tighter text-primary-container">SHONAR BANGLA</span>
+<div class="hidden md:flex gap-6">
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary-container pb-1 transition-all duration-300" href="#">Dashboard</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Analytics</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Connectivity</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Heritage</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-surface-variant/30 rounded-full px-4 py-2 border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-sm w-48 text-on-surface" placeholder="Search systems..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all active:scale-95">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all active:scale-95">settings</button>
+<div class="w-10 h-10 rounded-full border border-primary-container p-0.5 overflow-hidden">
+<img class="w-full h-full object-cover rounded-full" data-alt="A futuristic professional profile picture of a tech executive in a dark environment with teal lighting reflections, highlighting modern digital leadership. The style is cinematic and high-contrast, matching the dark data-driven UI of Shonar Bangla." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLPcykQbQLpV670so9hKMod6bZ9pt2gACu2sowomaKBUy8vB1B9IN_HAsIXPERExyIg3KpkZ9ijQH1mO_BuE_tYEp6pBhdUYpr56rJNH6dd9VMZJdMOOnlalgbqG3zRL-lalTyfsWyEiWn0bU53jSgRU80I3jA88LTtvuAJ7uqrQSGAW7k4HPG_HYswrijQJk8MxtV1b15ik8omvyvmXhxpgIbgcVGuj69M_VK1nu96P08XwrPJjxWW2q8zUFDzyK8UZLWGS_fKgQ0"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Hidden on small mobile, visible desktop) -->
+<aside class="fixed left-0 top-0 h-screen w-72 z-40 bg-surface-container/80 backdrop-blur-2xl border-r border-outline-variant/10 shadow-2xl flex flex-col h-full pt-24 pb-8 hidden md:flex">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-primary-container animate-pulse shadow-[0_0_8px_#00f2ff]"></div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed">Navigation Hub</span>
+</div>
+<p class="text-on-surface-variant text-xs mt-1">Regional Intelligence</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="bg-primary-container/20 text-primary-fixed border-l-4 border-primary-container flex items-center gap-3 px-6 py-4 font-label-sm text-label-sm uppercase tracking-widest active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">map</span> Map View
+            </a>
+<a class="text-on-surface-variant flex items-center gap-3 px-6 py-4 hover:bg-surface-variant/20 hover:text-primary-fixed transition-all font-label-sm text-label-sm uppercase tracking-widest active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">location_on</span> Location Filters
+            </a>
+<a class="text-on-surface-variant flex items-center gap-3 px-6 py-4 hover:bg-surface-variant/20 hover:text-primary-fixed transition-all font-label-sm text-label-sm uppercase tracking-widest active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">category</span> Category Filters
+            </a>
+<a class="text-on-surface-variant flex items-center gap-3 px-6 py-4 hover:bg-surface-variant/20 hover:text-primary-fixed transition-all font-label-sm text-label-sm uppercase tracking-widest active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">filter_list</span> Sub-Category
+            </a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-3 bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase tracking-widest rounded transition-all hover:neon-glow-teal active:scale-95 mb-6">
+                Export Data
+            </button>
+<div class="space-y-1">
+<a class="text-on-surface-variant flex items-center gap-3 py-2 hover:text-primary transition-all text-xs uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined text-lg">help</span> Support
+                </a>
+<a class="text-on-surface-variant flex items-center gap-3 py-2 hover:text-primary transition-all text-xs uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined text-lg">terminal</span> Logs
+                </a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="md:ml-72 pt-28 px-margin-mobile md:px-margin-desktop pb-24 min-h-screen">
+<!-- Header Section -->
+<header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tight">National Intelligence</h1>
+<p class="text-on-surface-variant font-body-lg text-body-lg max-w-2xl mt-2">Real-time surveillance of economic progress, human capital development, and structural integrity across the sovereign territory.</p>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-high/40 p-4 rounded-xl glass-surface">
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Current Status</p>
+<p class="font-data-display text-data-display text-secondary-fixed">STABLE_01</p>
+</div>
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-secondary-fixed/10 border border-secondary-fixed/30 text-secondary-fixed animate-pulse-gold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+</div>
+</header>
+<!-- KPI Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter-desktop mb-gutter-desktop">
+<!-- KPI 1: GDP -->
+<div class="glass-surface p-6 rounded-xl relative overflow-hidden group hover:border-primary/30 transition-all duration-500">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-primary-container opacity-40 group-hover:opacity-100 transition-opacity">trending_up</span>
+</div>
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Gross Domestic Product</p>
+<div class="flex items-baseline gap-2 mt-2">
+<h2 class="font-headline-xl text-headline-xl text-primary">$455.1B</h2>
+<span class="text-primary-container text-xs font-bold">+7.2%</span>
+</div>
+<div class="mt-6 h-32 w-full relative">
+<!-- SVG Chart Overlay Mockup -->
+<svg class="chart-container w-full h-full" viewbox="0 0 400 100">
+<path class="chart-line" d="M0,80 Q50,75 100,85 T200,60 T300,40 T400,20" fill="none" stroke="#00f2ff" stroke-width="3" style="stroke-dasharray: 500; stroke-dashoffset: 500; animation: drawLine 2s forwards ease-out;"></path>
+<path d="M0,80 Q50,75 100,85 T200,60 T300,40 T400,20 L400,100 L0,100 Z" fill="url(#gradTeal)" opacity="0.1"></path>
+<defs>
+<lineargradient id="gradTeal" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#00f2ff;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#00f2ff;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="mt-4 flex justify-between text-xs font-label-sm text-on-surface-variant">
+<span>Q1_24</span>
+<span>Q2_24</span>
+<span>Q3_24</span>
+<span>Q4_24</span>
+</div>
+</div>
+<!-- KPI 2: Literacy Rate -->
+<div class="glass-surface p-6 rounded-xl relative overflow-hidden group hover:border-primary/30 transition-all duration-500">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-secondary-fixed opacity-40 group-hover:opacity-100 transition-opacity">school</span>
+</div>
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Literacy Rate</p>
+<div class="flex items-baseline gap-2 mt-2">
+<h2 class="font-headline-xl text-headline-xl text-secondary-fixed">74.9%</h2>
+<span class="text-secondary-fixed text-xs font-bold">+1.8%</span>
+</div>
+<div class="mt-6 h-32 w-full relative">
+<svg class="chart-container w-full h-full" viewbox="0 0 400 100">
+<path d="M0,90 L80,85 L160,82 L240,78 L320,70 L400,65" fill="none" stroke="#ffd700" stroke-width="3" style="stroke-dasharray: 500; stroke-dashoffset: 500; animation: drawLine 2.5s 0.5s forwards ease-out;"></path>
+<path d="M0,90 L80,85 L160,82 L240,78 L320,70 L400,65 L400,100 L0,100 Z" fill="url(#gradGold)" opacity="0.1"></path>
+<defs>
+<lineargradient id="gradGold" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#ffd700;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#ffd700;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="mt-4 flex justify-between text-xs font-label-sm text-on-surface-variant">
+<span>JAN</span>
+<span>APR</span>
+<span>JUL</span>
+<span>OCT</span>
+</div>
+</div>
+<!-- KPI 3: Infrastructure Index -->
+<div class="glass-surface p-6 rounded-xl relative overflow-hidden group hover:border-primary/30 transition-all duration-500">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-primary-container opacity-40 group-hover:opacity-100 transition-opacity">construction</span>
+</div>
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Infrastructure Index</p>
+<div class="flex items-baseline gap-2 mt-2">
+<h2 class="font-headline-xl text-headline-xl text-primary">88.2</h2>
+<span class="text-primary-container text-xs font-bold">ALPHA_READY</span>
+</div>
+<div class="mt-6 h-32 w-full relative">
+<svg class="chart-container w-full h-full" viewbox="0 0 400 100">
+<path d="M0,95 Q100,90 150,50 T300,45 T400,10" fill="none" stroke="#00f2ff" stroke-width="3" style="stroke-dasharray: 500; stroke-dashoffset: 500; animation: drawLine 3s 0.2s forwards ease-out;"></path>
+<path d="M0,95 Q100,90 150,50 T300,45 T400,10 L400,100 L0,100 Z" fill="url(#gradTeal)" opacity="0.1"></path>
+</svg>
+</div>
+<div class="mt-4 flex justify-between text-xs font-label-sm text-on-surface-variant">
+<span>NODES</span>
+<span>GRIDS</span>
+<span>LINKAGES</span>
+<span>DEPLOYED</span>
+</div>
+</div>
+</div>
+<!-- Second Row: 3D Map and Table -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop">
+<!-- Map Side Panel -->
+<div class="lg:col-span-4 glass-surface rounded-xl overflow-hidden flex flex-col min-h-[500px]">
+<div class="p-6 border-b border-outline-variant/10">
+<h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary-container">Strategic Deployment Map</h3>
+<p class="text-xs text-on-surface-variant mt-1">Operational Visualization v3.1</p>
+</div>
+<div class="flex-1 relative bg-surface-container-lowest">
+<!-- 3D Map Animation Placeholder -->
+<!-- STITCH_THREEJS_START:ANIMATION_1 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_1" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_1');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(window.devicePixelRatio);
+container.appendChild(renderer.domElement);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0x404040, 2);
+scene.add(ambientLight);
+const pointLight = new THREE.PointLight(0x00F2FF, 2);
+pointLight.position.set(5, 5, 5);
+scene.add(pointLight);
+
+// Bangladesh Low-Poly Silhouette (Simplified representation)
+// In a real scenario, this would be a loaded GLTF, but here we construct a geometric abstraction
+const mapGroup = new THREE.Group();
+
+const material = new THREE.MeshPhongMaterial({
+    color: 0x121A26,
+    emissive: 0x00F2FF,
+    emissiveIntensity: 0.2,
+    flatShading: true,
+    transparent: true,
+    opacity: 0.9,
+    wireframe: true
+});
+
+// Dhaka Highlight Point
+const dhakaGeometry = new THREE.SphereGeometry(0.1, 16, 16);
+const dhakaMaterial = new THREE.MeshBasicMaterial({ color: 0xFFD700 });
+const dhakaPoint = new THREE.Mesh(dhakaGeometry, dhakaMaterial);
+dhakaPoint.position.set(0, 0, 0.5);
+mapGroup.add(dhakaPoint);
+
+// Abstract Low-Poly Shape representing Bangladesh
+const geometry = new THREE.IcosahedronGeometry(3, 1);
+const mesh = new THREE.Mesh(geometry, material);
+mapGroup.add(mesh);
+
+scene.add(mapGroup);
+camera.position.z = 8;
+
+// Data Streams (Particles)
+const particleCount = 100;
+const particles = new THREE.BufferGeometry();
+const posArray = new Float32Array(particleCount * 3);
+
+for(let i=0; i < particleCount * 3; i++) {
+    posArray[i] = (Math.random() - 0.5) * 10;
+}
+
+particles.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+const pMaterial = new THREE.PointsMaterial({
+    size: 0.05,
+    color: 0x00F2FF,
+    transparent: true,
+    opacity: 0.8
+});
+const particleMesh = new THREE.Points(particles, pMaterial);
+scene.add(particleMesh);
+
+function animate() {
+    requestAnimationFrame(animate);
+    mapGroup.rotation.y += 0.005;
+    particleMesh.rotation.y -= 0.002;
+    renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+animate();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_1 -->
+<!-- Overlay UI for Map -->
+<div class="absolute bottom-4 left-4 right-4 z-10 space-y-2">
+<div class="bg-background/80 backdrop-blur-md p-3 rounded-lg border border-primary-container/20 flex items-center justify-between">
+<span class="text-[10px] text-on-surface-variant uppercase font-label-sm">Active Nodes</span>
+<span class="text-primary-container font-data-display text-sm">1,248</span>
+</div>
+<div class="bg-background/80 backdrop-blur-md p-3 rounded-lg border border-secondary-fixed/20 flex items-center justify-between">
+<span class="text-[10px] text-on-surface-variant uppercase font-label-sm">System Latency</span>
+<span class="text-secondary-fixed font-data-display text-sm">12ms</span>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-container-high/30 flex justify-between items-center">
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded border border-outline-variant/30 flex items-center justify-center hover:bg-primary-container/10 transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+<button class="w-8 h-8 rounded border border-outline-variant/30 flex items-center justify-center hover:bg-primary-container/10 transition-colors">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+</div>
+<button class="text-[10px] font-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Reset Camera</button>
+</div>
+</div>
+<!-- Detailed Metrics Table -->
+<div class="lg:col-span-8 glass-surface rounded-xl flex flex-col">
+<div class="p-6 border-b border-outline-variant/10 flex justify-between items-center">
+<div>
+<h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary-container">Regional Growth Matrix</h3>
+<p class="text-xs text-on-surface-variant mt-1">Top-tier administrative division analytics</p>
+</div>
+<button class="px-4 py-2 bg-surface-variant/30 hover:bg-surface-variant/50 border border-outline-variant/20 rounded text-xs font-label-sm uppercase tracking-widest transition-all">Filter View</button>
+</div>
+<div class="flex-1 overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-high/20 border-b border-outline-variant/10">
+<tr>
+<th class="px-6 py-4 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Division</th>
+<th class="px-6 py-4 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">GDP Contr.</th>
+<th class="px-6 py-4 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Tech Hubs</th>
+<th class="px-6 py-4 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Power Grid</th>
+<th class="px-6 py-4 font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-4 font-body-md text-primary font-medium">Dhaka Central</td>
+<td class="px-6 py-4 font-data-display text-sm text-secondary-fixed">38.4%</td>
+<td class="px-6 py-4 text-on-surface-variant text-sm">42 Active</td>
+<td class="px-6 py-4">
+<div class="w-full h-1.5 bg-surface-variant/50 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[95%]"></div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-primary-container/10 text-primary-container text-[10px] font-bold uppercase">Optimal</span>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-4 font-body-md text-primary font-medium">Chattogram Port</td>
+<td class="px-6 py-4 font-data-display text-sm text-on-surface">22.1%</td>
+<td class="px-6 py-4 text-on-surface-variant text-sm">18 Active</td>
+<td class="px-6 py-4">
+<div class="w-full h-1.5 bg-surface-variant/50 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[88%]"></div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-primary-container/10 text-primary-container text-[10px] font-bold uppercase">Optimal</span>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-4 font-body-md text-primary font-medium">Sylhet Hydro</td>
+<td class="px-6 py-4 font-data-display text-sm text-on-surface">11.5%</td>
+<td class="px-6 py-4 text-on-surface-variant text-sm">09 Active</td>
+<td class="px-6 py-4">
+<div class="w-full h-1.5 bg-surface-variant/50 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed h-full w-[72%]"></div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-secondary-fixed/10 text-secondary-fixed text-[10px] font-bold uppercase">Maintenance</span>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-4 font-body-md text-primary font-medium">Rajshahi Agri</td>
+<td class="px-6 py-4 font-data-display text-sm text-on-surface">14.8%</td>
+<td class="px-6 py-4 text-on-surface-variant text-sm">12 Active</td>
+<td class="px-6 py-4">
+<div class="w-full h-1.5 bg-surface-variant/50 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[82%]"></div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-primary-container/10 text-primary-container text-[10px] font-bold uppercase">Optimal</span>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="px-6 py-4 font-body-md text-primary font-medium">Khulna Eco</td>
+<td class="px-6 py-4 font-data-display text-sm text-on-surface">13.2%</td>
+<td class="px-6 py-4 text-on-surface-variant text-sm">07 Active</td>
+<td class="px-6 py-4">
+<div class="w-full h-1.5 bg-surface-variant/50 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[91%]"></div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full bg-primary-container/10 text-primary-container text-[10px] font-bold uppercase">Optimal</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 flex justify-center">
+<button class="text-xs font-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2">
+                        View Complete National Registry <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-6 mt-auto bg-surface-container-lowest border-t border-outline-variant/5 flex flex-col md:flex-row justify-between items-center px-margin-desktop gap-4">
+<span class="font-headline-sm text-headline-sm text-primary">SHONAR BANGLA</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-fixed-variant opacity-80 hover:opacity-100 transition-opacity">© 2024 SHONAR BANGLA INTEL. ALL RIGHTS RESERVED.</span>
+<div class="flex gap-6">
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-primary-fixed-dim transition-colors" href="#">Privacy Protocol</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-primary-fixed-dim transition-colors" href="#">System Status</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-primary-fixed-dim transition-colors" href="#">Security Alpha</a>
+</div>
+</footer>
+<style>
+        @keyframes drawLine {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        .chart-line {
+            filter: drop-shadow(0 0 4px rgba(0, 242, 255, 0.5));
+        }
+    </style>
+<script>
+        // Simple micro-interaction for KPI cards
+        document.querySelectorAll('.glass-surface').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

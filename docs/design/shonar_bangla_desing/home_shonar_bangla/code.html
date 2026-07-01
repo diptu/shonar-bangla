@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SHONAR BANGLA | Regional Intelligence Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#006a71",
+                    "primary": "#e1fdff",
+                    "surface-variant": "#31353c",
+                    "surface-container": "#1c2026",
+                    "on-secondary-fixed-variant": "#544600",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed": "#141c28",
+                    "inverse-primary": "#00696f",
+                    "on-primary-fixed": "#002022",
+                    "secondary-container": "#ffdb3c",
+                    "surface-container-low": "#181c22",
+                    "on-primary-fixed-variant": "#004f54",
+                    "on-secondary-container": "#725f00",
+                    "surface-container-high": "#262a31",
+                    "on-tertiary": "#29313e",
+                    "secondary-fixed": "#ffe16d",
+                    "on-error-container": "#ffdad6",
+                    "surface-bright": "#353940",
+                    "outline": "#849495",
+                    "surface-tint": "#00dbe7",
+                    "inverse-on-surface": "#2d3137",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed-variant": "#3f4755",
+                    "surface-container-highest": "#31353c",
+                    "surface-container-lowest": "#0a0e14",
+                    "on-error": "#690005",
+                    "on-secondary": "#3a3000",
+                    "tertiary-fixed": "#dbe3f4",
+                    "background": "#10141a",
+                    "on-secondary-fixed": "#221b00",
+                    "outline-variant": "#3a494b",
+                    "tertiary-fixed-dim": "#bfc7d7",
+                    "on-surface-variant": "#b9cacb",
+                    "tertiary": "#f5f7ff",
+                    "on-background": "#dfe2eb",
+                    "secondary": "#fff9ef",
+                    "on-primary": "#00363a",
+                    "on-tertiary-container": "#58606e",
+                    "surface": "#10141a",
+                    "inverse-surface": "#dfe2eb",
+                    "primary-fixed": "#74f5ff",
+                    "primary-fixed-dim": "#00dbe7",
+                    "surface-dim": "#10141a",
+                    "on-surface": "#dfe2eb",
+                    "tertiary-container": "#d3dbec",
+                    "secondary-fixed-dim": "#e9c400",
+                    "primary-container": "#00f2ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "gutter-mobile": "16px",
+                    "gutter-desktop": "24px",
+                    "container-max": "1440px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "data-display": ["Geist"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Space Grotesk"],
+                    "headline-md": ["Space Grotesk"],
+                    "headline-xl": ["Space Grotesk"],
+                    "headline-lg": ["Space Grotesk"],
+                    "label-sm": ["Geist"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "data-display": ["20px", {"lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #10141a;
+            color: #dfe2eb;
+            overflow-x: hidden;
+        }
+
+        .glass-panel {
+            backdrop-filter: blur(16px);
+            background: rgba(18, 26, 38, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .neon-glow-primary {
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.35);
+        }
+
+        .neon-glow-primary:hover {
+            box-shadow: 0 0 35px rgba(0, 242, 255, 0.6);
+        }
+
+        .data-stream-overlay {
+            background: radial-gradient(circle at center, transparent 0%, #10141a 85%);
+            pointer-events: none;
+        }
+
+        .text-gradient-teal {
+            background: linear-gradient(135deg, #e1fdff 0%, #00f2ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.02); }
+        }
+
+        .animate-pulse-slow {
+            animation: pulse-slow 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-xl border-b border-outline-variant/20 shadow-[0_0_20px_rgba(0,242,255,0.15)] flex justify-between items-center px-margin-desktop py-4 transition-all duration-300 ease-in-out">
+<div class="flex items-center gap-8">
+<span class="font-headline-md text-headline-md font-bold tracking-tighter text-primary-container">SHONAR BANGLA</span>
+<div class="hidden md:flex gap-6">
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary-container pb-1 transition-all" href="#">Dashboard</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Analytics</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Connectivity</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Heritage</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-surface-container-high px-4 py-2 rounded-full border border-outline-variant/30">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-sm font-label-sm w-48 text-on-surface" placeholder="Intelligence Search..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary-container transition-colors">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary-container transition-colors">settings</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container/30">
+<img class="w-full h-full object-cover" data-alt="A professional close-up portrait of a high-level technology executive in a dark environment with soft teal rim lighting. The style is cinematic and futuristic, reflecting a data-driven intelligence professional in Dhaka. The person has a focused and confident expression, perfectly blending modern tech aesthetics with cultural heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRcKojWCHWHv7m0swkHH5XrM2o2mVgjfLlJ3tXBhDFjgHlL_pbO0uF90X2E31kkdV0f9Z1DQy5byZLmPg0ipddK-6zWaErhpQ06-1GhAx-0iFuAmnctzZuMW5D8K8OmrzSYjLZsR7fRDhP8SeYB_C-Nqh-i7gP1j1t_dt2W9ofKiHNojexIlWCKEWUg4Qzx4C0gLkl6ZmUAZeDjZX5ZFpLXYs74N6H1-TWTlhKY0bhKTGsD1OYY2lGXoA9oqV4j6gwEURVTIRT0Gg5"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- Side Navigation (Mobile/Utility) -->
+<aside class="fixed left-0 top-0 h-screen w-20 md:w-72 z-40 bg-surface-container/80 backdrop-blur-2xl border-r border-outline-variant/10 shadow-2xl flex flex-col h-full pt-24 pb-8 transition-all group overflow-hidden">
+<div class="px-6 mb-8 hidden md:block">
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant opacity-60">Intelligence Hub</p>
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Regional Hub</h3>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="bg-primary-container/20 text-primary-fixed border-l-4 border-primary-container flex items-center gap-3 px-6 py-4 transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest hidden md:block">Map View</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-3 px-6 py-4 hover:bg-surface-variant/20 hover:text-primary-fixed transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest hidden md:block">Location Filters</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-3 px-6 py-4 hover:bg-surface-variant/20 hover:text-primary-fixed transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest hidden md:block">Category Filters</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-3 px-6 py-4 hover:bg-surface-variant/20 hover:text-primary-fixed transition-all active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">filter_list</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest hidden md:block">Sub-Category</span>
+</a>
+</nav>
+<div class="px-6 mt-auto space-y-4">
+<button class="w-full bg-primary-container text-on-primary-container font-label-sm text-label-sm py-3 px-4 rounded-lg font-bold uppercase tracking-tighter flex items-center justify-center gap-2 hover:bg-primary-fixed-dim transition-all shadow-lg hidden md:flex">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+                Export Data
+            </button>
+<div class="border-t border-outline-variant/10 pt-6">
+<a class="flex items-center gap-3 px-2 py-2 text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest hidden md:block">Support</span>
+</a>
+<a class="flex items-center gap-3 px-2 py-2 text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest hidden md:block">Logs</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pl-20 md:pl-72 min-h-screen">
+<!-- Hero Section -->
+<section class="relative h-[921px] flex items-center justify-center overflow-hidden">
+<!-- 3D Map Animation Container -->
+<div class="absolute inset-0 z-0">
+<!-- STITCH_THREEJS_START:ANIMATION_1 class="absolute inset-0 w-full h-full opacity-60" -->
+<div class="absolute inset-0 w-full h-full opacity-60" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_1" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_1');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(window.devicePixelRatio);
+container.appendChild(renderer.domElement);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0x404040, 2);
+scene.add(ambientLight);
+const pointLight = new THREE.PointLight(0x00F2FF, 2);
+pointLight.position.set(5, 5, 5);
+scene.add(pointLight);
+
+// Bangladesh Low-Poly Silhouette (Simplified representation)
+// In a real scenario, this would be a loaded GLTF, but here we construct a geometric abstraction
+const mapGroup = new THREE.Group();
+
+const material = new THREE.MeshPhongMaterial({
+    color: 0x121A26,
+    emissive: 0x00F2FF,
+    emissiveIntensity: 0.2,
+    flatShading: true,
+    transparent: true,
+    opacity: 0.9,
+    wireframe: true
+});
+
+// Dhaka Highlight Point
+const dhakaGeometry = new THREE.SphereGeometry(0.1, 16, 16);
+const dhakaMaterial = new THREE.MeshBasicMaterial({ color: 0xFFD700 });
+const dhakaPoint = new THREE.Mesh(dhakaGeometry, dhakaMaterial);
+dhakaPoint.position.set(0, 0, 0.5);
+mapGroup.add(dhakaPoint);
+
+// Abstract Low-Poly Shape representing Bangladesh
+const geometry = new THREE.IcosahedronGeometry(3, 1);
+const mesh = new THREE.Mesh(geometry, material);
+mapGroup.add(mesh);
+
+scene.add(mapGroup);
+camera.position.z = 8;
+
+// Data Streams (Particles)
+const particleCount = 100;
+const particles = new THREE.BufferGeometry();
+const posArray = new Float32Array(particleCount * 3);
+
+for(let i=0; i < particleCount * 3; i++) {
+    posArray[i] = (Math.random() - 0.5) * 10;
+}
+
+particles.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+const pMaterial = new THREE.PointsMaterial({
+    size: 0.05,
+    color: 0x00F2FF,
+    transparent: true,
+    opacity: 0.8
+});
+const particleMesh = new THREE.Points(particles, pMaterial);
+scene.add(particleMesh);
+
+function animate() {
+    requestAnimationFrame(animate);
+    mapGroup.rotation.y += 0.005;
+    particleMesh.rotation.y -= 0.002;
+    renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+animate();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_1 -->
+<div class="absolute inset-0 data-stream-overlay"></div>
+</div>
+<!-- Content Overlay -->
+<div class="relative z-10 text-center max-w-4xl px-margin-mobile">
+<div class="inline-flex items-center gap-2 px-4 py-1 glass-panel rounded-full mb-6 border-primary-container/30">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">Live Network Pulse: Dhaka Central</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl mb-6 tracking-tight leading-tight">
+                    Resurgence of <br/>
+<span class="text-gradient-teal">Digital Heritage</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10 opacity-80">
+                    Synthesizing real-time regional intelligence with historical continuity. Experience the next generation of data-driven connectivity across the Shonar Bangla ecosystem.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="px-10 py-5 bg-primary-container text-on-primary-container font-headline-md text-headline-md font-bold rounded-lg neon-glow-primary transition-all active:scale-95 group flex items-center gap-3">
+                        EXPLORE DATA
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">trending_flat</span>
+</button>
+<button class="px-10 py-5 glass-panel text-primary font-headline-md text-headline-md font-medium rounded-lg hover:bg-surface-variant/40 transition-all border border-primary/20">
+                        HERITAGE ARCHIVE
+                    </button>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Scroll to Analyze</span>
+<div class="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent"></div>
+</div>
+</section>
+<!-- Bento Grid Insights -->
+<section class="px-margin-desktop py-24 max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div>
+<p class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-2">Real-time Metrics</p>
+<h2 class="font-headline-lg text-headline-lg font-bold">Connectivity Intelligence</h2>
+</div>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all flex items-center gap-2 border-b border-outline-variant/30 pb-1">
+                    VIEW ALL PARAMETERS <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+<div class="bento-grid">
+<!-- Data Visualization Card 1 -->
+<div class="col-span-12 lg:col-span-8 glass-panel rounded-xl p-8 group hover:border-primary-container/30 transition-all duration-500 overflow-hidden relative">
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between mb-8">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Growth Vectors</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Regional infrastructure expansion metrics</p>
+</div>
+<div class="text-right">
+<span class="font-data-display text-data-display text-primary">+24.8%</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">YOY PERFORMANCE</p>
+</div>
+</div>
+<div class="flex-1 min-h-[300px] flex items-end gap-2">
+<!-- Custom CSS Bar Chart Simulation -->
+<div class="flex-1 bg-primary/10 rounded-t h-[40%] hover:bg-primary/30 transition-all cursor-pointer relative group/bar">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover/bar:opacity-100 transition-opacity font-label-sm text-primary text-[10px]">JAN</div>
+</div>
+<div class="flex-1 bg-primary/15 rounded-t h-[60%] hover:bg-primary/30 transition-all cursor-pointer relative group/bar"></div>
+<div class="flex-1 bg-primary/10 rounded-t h-[55%] hover:bg-primary/30 transition-all cursor-pointer relative group/bar"></div>
+<div class="flex-1 bg-primary/20 rounded-t h-[85%] hover:bg-primary/30 transition-all cursor-pointer relative group/bar"></div>
+<div class="flex-1 bg-primary/40 rounded-t h-[70%] hover:bg-primary/30 transition-all cursor-pointer relative group/bar"></div>
+<div class="flex-1 bg-primary-container rounded-t h-[95%] hover:bg-primary/60 transition-all cursor-pointer relative group/bar"></div>
+<div class="flex-1 bg-primary/30 rounded-t h-[65%] hover:bg-primary/30 transition-all cursor-pointer relative group/bar"></div>
+</div>
+</div>
+</div>
+<!-- Featured Image Card -->
+<div class="col-span-12 lg:col-span-4 glass-panel rounded-xl overflow-hidden group relative">
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="A futuristic wide-angle cityscape of Dhaka at night, seen from a high elevation. The city is illuminated with glowing teal and gold light paths representing high-speed data flow and connectivity. The image has a sophisticated glassmorphic finish, blending high-performance technology with the atmospheric charm of the regional architecture. High contrast, sharp focus, 8k resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPOsQ5IS2UdVFmebU5mDO983AHKGBovArz1ZeUPH0ydBqN9pTIPRRb1MtRCNskOZ2uq2Mv4WLyjwFiD6eR2tizurp701jThc0RnN13167h-BFHvKwF7qW_0S37gMpTrs7-_y6Q5t_6y2DVjtl-uPyfwNtAd1GYYxRTC89BIbwNu81vwZFS3HNDTP-PSM3TMB6M_ziBoXB15CUyMw2NIrWYJRFJDoRvwZGysC4UcVCTvsvTf_dh3cnb7YN_4iBn0CVkKYtSHa8kVrOA"/>
+<div class="absolute bottom-0 left-0 p-8 z-20">
+<span class="inline-block px-3 py-1 bg-primary-container/20 text-primary text-[10px] rounded-full font-label-sm mb-4">CITY OVERVIEW</span>
+<h4 class="font-headline-md text-headline-md font-bold text-white mb-2">Purbachal Smart Grid</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">System Status: Active</p>
+</div>
+</div>
+<!-- Metric Tile 1 -->
+<div class="col-span-12 md:col-span-4 lg:col-span-3 glass-panel rounded-xl p-8 border-l-4 border-primary-container">
+<span class="material-symbols-outlined text-primary mb-6 text-[32px]">hub</span>
+<h5 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">Total Nodes</h5>
+<p class="font-data-display text-headline-lg font-bold text-primary">12,482</p>
+<div class="mt-4 flex items-center gap-2 text-[12px] text-on-secondary-container">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+                        112 NEW NODES TODAY
+                    </div>
+</div>
+<!-- Metric Tile 2 -->
+<div class="col-span-12 md:col-span-4 lg:col-span-3 glass-panel rounded-xl p-8 border-l-4 border-secondary-container">
+<span class="material-symbols-outlined text-secondary-container mb-6 text-[32px]">history_edu</span>
+<h5 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">Heritage Score</h5>
+<p class="font-data-display text-headline-lg font-bold text-secondary-container">0.94</p>
+<div class="mt-4 flex items-center gap-2 text-[12px] text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                        CULTURAL FIDELITY HIGH
+                    </div>
+</div>
+<!-- Map Integration Card (Small) -->
+<div class="col-span-12 md:col-span-4 lg:col-span-6 glass-panel rounded-xl p-2 relative overflow-hidden h-[240px]">
+<div class="w-full h-full bg-cover bg-center rounded-lg grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-700" data-alt="A clean, minimalist topographical map of central Dhaka with stylized digital overlays. The map uses a palette of deep blues and teals, with glowing golden nodes highlighting key cultural and infrastructure sites. No text labels, focusing on the visual flow of the geography. Dark mode aesthetic, futuristic UI style." data-location="Dhaka" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBeAepOHv0uRqUAR_1ihXRJqrp9XB983__ZRGRA2LP6ZwfzWGAa5UePshcpDYgPrbhxmGAw3kdF5hdKnjVJDaVys6t0qlFdanewKvK_UgBNO6JdoxBEGbN249aHCMhafzUXSwGzOQPXyWjntQHimx72rDk0YciMr0tdty7ogUvAqFftQMiXUzyFGOfNilwdFPGo9BNZz4dRqvueHFgFUhKj4jcD1CjksvIUCjtQbHBtNU8upRo6sH4olAb22U7wnCkLdNXlO9qCdGlu')"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="bg-background/80 backdrop-blur-md px-6 py-3 rounded-full font-label-sm text-label-sm text-primary border border-primary/20 hover:bg-primary hover:text-on-primary transition-all">
+                            OPEN INTERACTIVE ATLAS
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-12 border-t border-outline-variant/5">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+<div class="text-center md:text-left">
+<span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tighter">SHONAR BANGLA</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-2 max-w-xs">Building the future of regional intelligence with integrity and cultural pride.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-primary-fixed-dim transition-colors" href="#">Privacy Protocol</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-primary-fixed-dim transition-colors" href="#">System Status</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-primary-fixed-dim transition-colors" href="#">Security Alpha</a>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 opacity-80 pt-8 border-t border-outline-variant/10">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 SHONAR BANGLA INTEL. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-4">
+<button class="w-8 h-8 flex items-center justify-center glass-panel rounded-full hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center glass-panel rounded-full hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">public</span>
+</button>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for the cards
+        document.querySelectorAll('.glass-panel').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+                
+                // Subtle lift effect on mouse move
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 50;
+                const rotateY = (centerX - x) / 50;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+            });
+        });
+
+        // Search bar interaction
+        const searchInput = document.querySelector('input[placeholder="Intelligence Search..."]');
+        searchInput?.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('border-primary-container/60');
+            searchInput.parentElement.classList.add('shadow-[0_0_15px_rgba(0,242,255,0.1)]');
+        });
+        searchInput?.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('border-primary-container/60');
+            searchInput.parentElement.classList.remove('shadow-[0_0_15px_rgba(0,242,255,0.1)]');
+        });
+    </script>
+</body></html>

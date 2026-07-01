@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SHONAR BANGLA | Metrics &amp; Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Geist:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @layer base {
+            body {
+                @apply bg-background text-on-background font-body-md antialiased overflow-x-hidden;
+                background-image: radial-gradient(circle at 50% -20%, #1c2026 0%, #10141a 100%);
+            }
+        }
+
+        .glass-card {
+            background: rgba(28, 32, 38, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .neon-glow-teal {
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+        }
+
+        .neon-glow-gold {
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #00dbe7;
+            border-radius: 2px;
+        }
+
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .data-row:hover {
+            background: rgba(0, 242, 255, 0.03);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#006a71",
+                        "primary": "#e1fdff",
+                        "surface-variant": "#31353c",
+                        "surface-container": "#1c2026",
+                        "on-secondary-fixed-variant": "#544600",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#141c28",
+                        "inverse-primary": "#00696f",
+                        "on-primary-fixed": "#002022",
+                        "secondary-container": "#ffdb3c",
+                        "surface-container-low": "#181c22",
+                        "on-primary-fixed-variant": "#004f54",
+                        "on-secondary-container": "#725f00",
+                        "surface-container-high": "#262a31",
+                        "on-tertiary": "#29313e",
+                        "secondary-fixed": "#ffe16d",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#353940",
+                        "outline": "#849495",
+                        "surface-tint": "#00dbe7",
+                        "inverse-on-surface": "#2d3137",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#3f4755",
+                        "surface-container-highest": "#31353c",
+                        "surface-container-lowest": "#0a0e14",
+                        "on-error": "#690005",
+                        "on-secondary": "#3a3000",
+                        "tertiary-fixed": "#dbe3f4",
+                        "background": "#10141a",
+                        "on-secondary-fixed": "#221b00",
+                        "outline-variant": "#3a494b",
+                        "tertiary-fixed-dim": "#bfc7d7",
+                        "on-surface-variant": "#b9cacb",
+                        "tertiary": "#f5f7ff",
+                        "on-background": "#dfe2eb",
+                        "secondary": "#fff9ef",
+                        "on-primary": "#00363a",
+                        "on-tertiary-container": "#58606e",
+                        "surface": "#10141a",
+                        "inverse-surface": "#dfe2eb",
+                        "primary-fixed": "#74f5ff",
+                        "primary-fixed-dim": "#00dbe7",
+                        "surface-dim": "#10141a",
+                        "on-surface": "#dfe2eb",
+                        "tertiary-container": "#d3dbec",
+                        "secondary-fixed-dim": "#e9c400",
+                        "primary-container": "#00f2ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter-mobile": "16px",
+                        "gutter-desktop": "24px",
+                        "container-max": "1440px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "data-display": ["Geist"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"],
+                        "headline-xl": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "label-sm": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "data-display": ["20px", {"lineHeight": "24px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="custom-scrollbar">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/60 backdrop-blur-xl border-b border-outline-variant/20 shadow-[0_0_20px_rgba(0,242,255,0.15)] flex justify-between items-center px-margin-desktop py-4 transition-all duration-300 ease-in-out">
+<div class="flex items-center gap-8">
+<span class="font-headline-md text-headline-md font-bold tracking-tighter text-primary-container">SHONAR BANGLA</span>
+<div class="hidden md:flex gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary-container pb-1" href="#">Analytics</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Connectivity</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Heritage</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<input class="bg-surface-container/50 border border-outline-variant/30 rounded-full py-2 px-4 pr-10 text-sm focus:outline-none focus:border-primary-container transition-all w-64" placeholder="Search data points..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2 text-on-surface-variant text-sm">search</span>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-variant/30 p-2 rounded-full transition-all">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-variant/30 p-2 rounded-full transition-all">settings</button>
+<div class="w-8 h-8 rounded-full bg-primary-container/20 border border-primary-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a technology analyst with a soft glow illuminating their face, set against a dark, minimalist digital background with subtle teal data streams. The lighting is focused and clean, embodying a high-performance corporate aesthetic with deep blues and crisp highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSv1iuaOYP9qHj9gQ7dH4YiQD2c8hOSt4G-Tf7hIRSjqpPI_wodgEXZngUcA76pKx0BT_VSi3Rki41yLJKFZ7_tXUorP4u1WdLxcqKJ-6K2g1-9Kv5I5q4etXz98cbzXVZh2HDcPZ3RaNvdGkvYRJneUYOiq3xjfOhkC9cuc0vu9Uc0Y7UfZAnZSOmMU5CLMc7aQs1RuOtiJlmFIhTCuVjhH_qEFn2o8Wv9pho-Xjz_p48jsUNZ3_7qgMiAko9DpIQwzoIfGBRUuB6"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-72 z-40 bg-surface-container/80 backdrop-blur-2xl border-r border-outline-variant/10 shadow-2xl flex flex-col pt-24 pb-8 hidden md:flex">
+<div class="px-6 mb-8">
+<h2 class="font-headline-md text-headline-md text-primary mb-1">Navigation Hub</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Regional Intelligence</p>
+</div>
+<nav class="flex-grow">
+<a class="text-on-surface-variant flex items-center gap-3 px-6 py-4 hover:bg-surface-variant/20 hover:text-primary-fixed transition-all font-label-sm uppercase tracking-widest active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">map</span>
+<span>Map View</span>
+</a>
+<a class="bg-primary-container/20 text-primary-fixed border-l-4 border-primary-container flex items-center gap-3 px-6 py-4 font-label-sm uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span>Location Filters</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-3 px-6 py-4 hover:bg-surface-variant/20 hover:text-primary-fixed transition-all font-label-sm uppercase tracking-widest active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">category</span>
+<span>Category Filters</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-3 px-6 py-4 hover:bg-surface-variant/20 hover:text-primary-fixed transition-all font-label-sm uppercase tracking-widest active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined">filter_list</span>
+<span>Sub-Category</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-3 bg-primary-container text-on-primary-container font-label-sm uppercase tracking-widest rounded neon-glow-teal hover:opacity-90 transition-all active:scale-95">
+                Export Data
+            </button>
+<div class="mt-8 flex flex-col gap-2">
+<a class="text-on-surface-variant flex items-center gap-3 py-2 hover:text-primary transition-all font-label-sm uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Support</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-3 py-2 hover:text-primary transition-all font-label-sm uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span>Logs</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="md:ml-72 pt-24 pb-12 px-margin-mobile md:px-margin-desktop">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-primary-fixed-dim leading-none">Metrics Dashboard</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-2xl">
+                    Analyzing socioeconomic dynamics through the lens of real-time regional data. Our data-driven intelligence platform provides precision insights into the resurgence of heritage economies.
+                </p>
+</div>
+<div class="flex gap-4">
+<div class="glass-card p-4 rounded-xl flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Global Health Index</span>
+<span class="font-data-display text-data-display text-primary-container">84.2% <span class="material-symbols-outlined text-sm align-middle">trending_up</span></span>
+</div>
+<div class="glass-card p-4 rounded-xl flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Efficiency Delta</span>
+<span class="font-data-display text-data-display text-secondary-container">+12.4%</span>
+</div>
+</div>
+</header>
+<!-- Bento Grid: Top Charts -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop mb-12">
+<!-- Line Chart: Growth Forecast -->
+<div class="lg:col-span-8 glass-card p-6 rounded-xl relative overflow-hidden h-[400px]">
+<div class="flex justify-between items-start mb-8 relative z-10">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Growth Intelligence</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Temporal Analysis (2020 - 2024)</p>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary-container"></div>
+<span class="text-xs text-on-surface-variant">Heritage Cluster</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-secondary-container"></div>
+<span class="text-xs text-on-surface-variant">Tech Hubs</span>
+</div>
+</div>
+</div>
+<!-- Visualization Placeholder -->
+<div class="absolute inset-x-6 bottom-6 top-24 flex items-end justify-between gap-1">
+<!-- SVG Chart Logic -->
+<svg class="w-full h-full overflow-visible" viewbox="0 0 800 200">
+<defs>
+<lineargradient id="tealGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#00f2ff" stop-opacity="0.5"></stop>
+<stop offset="100%" stop-color="#00f2ff" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Lines -->
+<line stroke="rgba(255,255,255,0.05)" x1="0" x2="800" y1="0" y2="0"></line>
+<line stroke="rgba(255,255,255,0.05)" x1="0" x2="800" y1="50" y2="50"></line>
+<line stroke="rgba(255,255,255,0.05)" x1="0" x2="800" y1="100" y2="100"></line>
+<line stroke="rgba(255,255,255,0.05)" x1="0" x2="800" y1="150" y2="150"></line>
+<!-- Line 1: Teal -->
+<path class="drop-shadow-[0_0_8px_rgba(0,242,255,0.5)]" d="M0,150 Q100,80 200,120 T400,60 T600,90 T800,20" fill="none" stroke="#00f2ff" stroke-width="3"></path>
+<path d="M0,150 Q100,80 200,120 T400,60 T600,90 T800,20 L800,200 L0,200 Z" fill="url(#tealGradient)"></path>
+<!-- Line 2: Gold -->
+<path d="M0,180 Q100,150 200,160 T400,110 T600,130 T800,80" fill="none" opacity="0.6" stroke="#ffd700" stroke-dasharray="8 4" stroke-width="3"></path>
+</svg>
+</div>
+</div>
+<!-- Regional Distribution Bar Chart -->
+<div class="lg:col-span-4 glass-card p-6 rounded-xl flex flex-col h-[400px]">
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Regional Impact</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-8">Intensity Distribution</p>
+<div class="flex-grow flex flex-col justify-between py-2">
+<div class="space-y-1">
+<div class="flex justify-between text-xs mb-1 uppercase tracking-widest">
+<span>Dhaka Metro</span>
+<span class="text-primary-container">92%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container neon-glow-teal" style="width: 92%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-xs mb-1 uppercase tracking-widest">
+<span>Chittagong Port</span>
+<span class="text-primary-container">78%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container opacity-80" style="width: 78%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-xs mb-1 uppercase tracking-widest">
+<span>Sylhet Highlands</span>
+<span class="text-secondary-container">64%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container neon-glow-gold" style="width: 64%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-xs mb-1 uppercase tracking-widest">
+<span>Rajshahi Plains</span>
+<span class="text-primary-container">45%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container opacity-60" style="width: 45%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Data Table Section -->
+<section class="glass-card rounded-xl overflow-hidden mb-12">
+<div class="px-6 py-5 border-b border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-container-low/50">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">Socioeconomic Raw Intelligence</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Sectoral performance metrics</p>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface-variant/30 hover:bg-surface-variant/50 text-on-surface px-4 py-2 rounded-lg border border-outline-variant/30 text-sm transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">filter_alt</span> Filter
+                    </button>
+<button class="bg-surface-variant/30 hover:bg-surface-variant/50 text-on-surface px-4 py-2 rounded-lg border border-outline-variant/30 text-sm transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">sort</span> Sort
+                    </button>
+</div>
+</div>
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-lowest text-on-surface-variant font-label-sm uppercase tracking-widest text-[10px]">
+<tr>
+<th class="px-6 py-4 border-b border-outline-variant/10">Location</th>
+<th class="px-6 py-4 border-b border-outline-variant/10">Growth Velocity</th>
+<th class="px-6 py-4 border-b border-outline-variant/10">Infrastructure Score</th>
+<th class="px-6 py-4 border-b border-outline-variant/10">Digital Literacy</th>
+<th class="px-6 py-4 border-b border-outline-variant/10">Health Index</th>
+<th class="px-6 py-4 border-b border-outline-variant/10">Status</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-sm divide-y divide-outline-variant/5">
+<tr class="data-row transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary-container/10 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-lg">domain</span>
+</div>
+<span class="font-semibold text-primary">DHAKA-N</span>
+</div>
+</td>
+<td class="px-6 py-4 font-data-display text-primary-container">+8.4%</td>
+<td class="px-6 py-4">
+<div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container" style="width: 88%"></div>
+</div>
+</td>
+<td class="px-6 py-4">76.2%</td>
+<td class="px-6 py-4">91.4</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 text-[10px] uppercase font-bold border border-emerald-500/20">Peak Alpha</span>
+</td>
+</tr>
+<tr class="data-row transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-secondary-container/10 flex items-center justify-center text-secondary-container">
+<span class="material-symbols-outlined text-lg">water_drop</span>
+</div>
+<span class="font-semibold text-primary">CHITT-SE</span>
+</div>
+</td>
+<td class="px-6 py-4 font-data-display text-secondary-container">+12.1%</td>
+<td class="px-6 py-4">
+<div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container" style="width: 65%"></div>
+</div>
+</td>
+<td class="px-6 py-4">61.8%</td>
+<td class="px-6 py-4">84.9</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-secondary-container/10 text-secondary-container text-[10px] uppercase font-bold border border-secondary-container/20">Surging</span>
+</td>
+</tr>
+<tr class="data-row transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary-container/10 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-lg">grass</span>
+</div>
+<span class="font-semibold text-primary">RAJ-W</span>
+</div>
+</td>
+<td class="px-6 py-4 font-data-display text-primary-container">+4.2%</td>
+<td class="px-6 py-4">
+<div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container" style="width: 42%"></div>
+</div>
+</td>
+<td class="px-6 py-4">55.0%</td>
+<td class="px-6 py-4">78.2</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-surface-variant text-on-surface-variant text-[10px] uppercase font-bold border border-outline-variant/20">Stable</span>
+</td>
+</tr>
+<tr class="data-row transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary-container/10 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-lg">waves</span>
+</div>
+<span class="font-semibold text-primary">SYLH-NE</span>
+</div>
+</td>
+<td class="px-6 py-4 font-data-display text-primary-container">+6.7%</td>
+<td class="px-6 py-4">
+<div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container" style="width: 72%"></div>
+</div>
+</td>
+<td class="px-6 py-4">68.4%</td>
+<td class="px-6 py-4">82.1</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-primary-container/10 text-primary-container text-[10px] uppercase font-bold border border-primary-container/20">Emergent</span>
+</td>
+</tr>
+<tr class="data-row transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-error-container/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-lg">warning</span>
+</div>
+<span class="font-semibold text-primary">BARI-S</span>
+</div>
+</td>
+<td class="px-6 py-4 font-data-display text-error">-1.2%</td>
+<td class="px-6 py-4">
+<div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-error" style="width: 30%"></div>
+</div>
+</td>
+<td class="px-6 py-4">42.1%</td>
+<td class="px-6 py-4">65.5</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded bg-error-container/20 text-error text-[10px] uppercase font-bold border border-error-container">Intervention</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 bg-surface-container-lowest/50 flex justify-between items-center">
+<span class="text-xs text-on-surface-variant uppercase font-label-sm">Showing 5 of 64 regional data blocks</span>
+<div class="flex gap-1">
+<button class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-all"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="w-8 h-8 rounded bg-primary-container text-on-primary-container flex items-center justify-center text-xs font-bold">1</button>
+<button class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-xs hover:bg-primary-container hover:text-on-primary-container transition-all">2</button>
+<button class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-xs hover:bg-primary-container hover:text-on-primary-container transition-all">3</button>
+<button class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-all"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+</section>
+<!-- Dynamic Visualization Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-desktop">
+<!-- Glass Card 1 -->
+<div class="glass-card p-6 rounded-xl flex flex-col items-center text-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary-container/5 rounded-full -mr-12 -mt-12 group-hover:scale-150 transition-all duration-500"></div>
+<div class="w-16 h-16 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container mb-4 neon-glow-teal">
+<span class="material-symbols-outlined text-3xl">hub</span>
+</div>
+<h4 class="font-headline-md text-primary mb-2">Network Density</h4>
+<p class="text-sm text-on-surface-variant mb-6">Real-time analysis of regional connectivity protocols and node performance.</p>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container" style="width: 78%"></div>
+</div>
+<span class="mt-2 text-xs font-data-display text-primary">78% SYNC</span>
+</div>
+<!-- Glass Card 2 -->
+<div class="glass-card p-6 rounded-xl flex flex-col items-center text-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-secondary-container/5 rounded-full -mr-12 -mt-12 group-hover:scale-150 transition-all duration-500"></div>
+<div class="w-16 h-16 rounded-full bg-secondary-container/10 flex items-center justify-center text-secondary-container mb-4 neon-glow-gold">
+<span class="material-symbols-outlined text-3xl">history_edu</span>
+</div>
+<h4 class="font-headline-md text-primary mb-2">Heritage Index</h4>
+<p class="text-sm text-on-surface-variant mb-6">Quantifying the impact of traditional industries on the modern GDP framework.</p>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container" style="width: 54%"></div>
+</div>
+<span class="mt-2 text-xs font-data-display text-secondary-container">54% OPTIMIZED</span>
+</div>
+<!-- Glass Card 3 -->
+<div class="glass-card p-6 rounded-xl flex flex-col items-center text-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary-container/5 rounded-full -mr-12 -mt-12 group-hover:scale-150 transition-all duration-500"></div>
+<div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container mb-4 shimmer">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<h4 class="font-headline-md text-primary mb-2">Energy Flux</h4>
+<p class="text-sm text-on-surface-variant mb-6">Monitoring sustainable energy consumption across the industrial delta.</p>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container" style="width: 91%"></div>
+</div>
+<span class="mt-2 text-xs font-data-display text-primary">91% CAPACITY</span>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-6 mt-auto bg-surface-container-lowest border-t border-outline-variant/5 flex flex-col md:flex-row justify-between items-center px-margin-desktop gap-4">
+<div class="flex flex-col md:flex-row items-center gap-6">
+<span class="font-headline-sm text-headline-sm text-primary">SHONAR BANGLA</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">© 2024 SHONAR BANGLA INTEL. ALL RIGHTS RESERVED.</span>
+</div>
+<div class="flex gap-6">
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-primary-fixed-dim transition-colors opacity-80 hover:opacity-100" href="#">Privacy Protocol</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-primary-fixed-dim transition-colors opacity-80 hover:opacity-100" href="#">System Status</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-primary-fixed-dim transition-colors opacity-80 hover:opacity-100" href="#">Security Alpha</a>
+</div>
+</footer>
+<!-- Interactive Layer: Atmospheric Canvas -->
+<div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden opacity-30">
+<!-- STITCH_THREEJS_START:ANIMATION_1 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_1" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_1');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(window.devicePixelRatio);
+container.appendChild(renderer.domElement);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0x404040, 2);
+scene.add(ambientLight);
+const pointLight = new THREE.PointLight(0x00F2FF, 2);
+pointLight.position.set(5, 5, 5);
+scene.add(pointLight);
+
+// Bangladesh Low-Poly Silhouette (Simplified representation)
+// In a real scenario, this would be a loaded GLTF, but here we construct a geometric abstraction
+const mapGroup = new THREE.Group();
+
+const material = new THREE.MeshPhongMaterial({
+    color: 0x121A26,
+    emissive: 0x00F2FF,
+    emissiveIntensity: 0.2,
+    flatShading: true,
+    transparent: true,
+    opacity: 0.9,
+    wireframe: true
+});
+
+// Dhaka Highlight Point
+const dhakaGeometry = new THREE.SphereGeometry(0.1, 16, 16);
+const dhakaMaterial = new THREE.MeshBasicMaterial({ color: 0xFFD700 });
+const dhakaPoint = new THREE.Mesh(dhakaGeometry, dhakaMaterial);
+dhakaPoint.position.set(0, 0, 0.5);
+mapGroup.add(dhakaPoint);
+
+// Abstract Low-Poly Shape representing Bangladesh
+const geometry = new THREE.IcosahedronGeometry(3, 1);
+const mesh = new THREE.Mesh(geometry, material);
+mapGroup.add(mesh);
+
+scene.add(mapGroup);
+camera.position.z = 8;
+
+// Data Streams (Particles)
+const particleCount = 100;
+const particles = new THREE.BufferGeometry();
+const posArray = new Float32Array(particleCount * 3);
+
+for(let i=0; i < particleCount * 3; i++) {
+    posArray[i] = (Math.random() - 0.5) * 10;
+}
+
+particles.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+const pMaterial = new THREE.PointsMaterial({
+    size: 0.05,
+    color: 0x00F2FF,
+    transparent: true,
+    opacity: 0.8
+});
+const particleMesh = new THREE.Points(particles, pMaterial);
+scene.add(particleMesh);
+
+function animate() {
+    requestAnimationFrame(animate);
+    mapGroup.rotation.y += 0.005;
+    particleMesh.rotation.y -= 0.002;
+    renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+animate();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_1 -->
+</div>
+<script>
+        // Micro-interactions for table sorting feedback
+        document.querySelectorAll('.data-row').forEach(row => {
+            row.addEventListener('click', () => {
+                row.classList.add('bg-primary-container/5');
+                setTimeout(() => row.classList.remove('bg-primary-container/5'), 300);
+            });
+        });
+
+        // Simulating live data update every few seconds
+        setInterval(() => {
+            const indices = document.querySelectorAll('.font-data-display');
+            indices.forEach(index => {
+                if(Math.random() > 0.8) {
+                    const originalVal = index.innerText;
+                    index.style.opacity = '0.5';
+                    setTimeout(() => {
+                        index.style.opacity = '1';
+                    }, 100);
+                }
+            });
+        }, 5000);
+    </script>
+</body></html>
