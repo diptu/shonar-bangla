@@ -57,6 +57,7 @@
 | Layer | Technology |
 |:---|:---|
 | **Frontend** | Next.js + TypeScript + TailwindCSS |
+| AnimationMotion| Motion |
 | **Backend** | NestJS + TypeScript |
 | **Database** | MongoDB |
 | **ORM** | Prisma |
