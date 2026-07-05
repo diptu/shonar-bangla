@@ -1,0 +1,43 @@
+// Mirrors docs/domain-model.md — the Phase 2 contract.
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Division {
+  code      String     @id // ISO 3166-2:BD, e.g. "BD-C"
+  name      String
+  districts District[]
+}
+
+model District {
+  code         String   @id // ISO 3166-2:BD, e.g. "BD-13"
+  name         String
+  divisionCode String
+  division     Division @relation(fields: [divisionCode], references: [code])
+}
+
+model Indicator {
+  id       String           @id // slug, e.g. "gdp-growth"
+  name     String
+  sector   String // validated against the Sector union at the boundary
+  unit     String
+  source   String
+  geoLevel String // "country" | "division" | "district"
+  values   IndicatorValue[]
+}
+
+model IndicatorValue {
+  id          Int       @id @default(autoincrement())
+  indicatorId String
+  indicator   Indicator @relation(fields: [indicatorId], references: [id])
+  geoCode     String // "BD" | division code | district code
+  year        Int
+  value       Float
+
+  @@unique([indicatorId, geoCode, year])
+}
