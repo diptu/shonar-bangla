@@ -52,18 +52,199 @@
 
 ## 🛠 Tech Stack
 
-<div align="center">
 
-| Layer | Technology |
-|:---|:---|
-| **Frontend** | Next.js + TypeScript + TailwindCSS |
-| AnimationMotion| Motion |
-| **Backend** | NestJS + TypeScript |
-| **Database** | MongoDB |
-| **ORM** | Prisma |
-| **Maps** | Leaflet |
+### Frontend Stack (Next.js)
+| Category             | Technology                                |
+| -------------------- | ----------------------------------------- |
+| Framework            | Next.js 16 (App Router)                   |
+| Language             | TypeScript                                |
+| Runtime              | React 19                                  |
+| Styling              | Tailwind CSS v4                           |
+| UI Components        | shadcn/ui                                 |
+| Component Library    | Radix UI                                  |
+| Icons                | Lucide React                              |
+| Forms                | React Hook Form                           |
+| Validation           | Zod                                       |
+| State Management     | Zustand                                   |
+| Server State         | TanStack Query                            |
+| Authentication       | Better Auth / Auth.js (or JWT via NestJS) |
+| Data Fetching        | TanStack Query + Server Components        |
+| Tables               | TanStack Table                            |
+| Charts               | Tremor / Recharts                         |
+| Rich Text            | Tiptap                                    |
+| File Upload          | UploadThing / S3 Direct Upload            |
+| Drag & Drop          | dnd-kit                                   |
+| Command Palette      | cmdk                                      |
+| Theme                | next-themes                               |
+| Date                 | date-fns                                  |
+| Notifications        | Sonner                                    |
+| Internationalization | next-intl                                 |
+| PDF Viewer           | React PDF                                 |
+| Maps                 | MapLibre GL                               |
+| Markdown             | react-markdown                            |
+| Virtualization       | TanStack Virtual                          |
+| Animation            | Motion (formerly Framer Motion)           |
 
-</div>
+### Backend Stack (Nest.js)
+| Category        | Technology                     |
+| --------------- | ------------------------------ |
+| Framework       | NestJS                         |
+| Language        | TypeScript                     |
+| Runtime         | Node.js LTS                    |
+| ORM             | Prisma ORM                     |
+| Database        | PostgreSQL                     |
+| Cache           | Redis                          |
+| Search          | Elasticsearch / OpenSearch     |
+| Message Queue   | RabbitMQ                       |
+| Event Streaming | Apache Kafka                   |
+| File Storage    | Azure Blob Storage / Amazon S3 |
+| Authentication  | JWT + Refresh Tokens           |
+| Authorization   | CASL / Permit.io / Custom ABAC |
+| Validation      | class-validator                |
+| Serialization   | class-transformer              |
+| OpenAPI         | Swagger                        |
+| GraphQL         | Apollo (optional)              |
+| Background Jobs | BullMQ                         |
+| Scheduler       | @nestjs/schedule               |
+| Email           | Nodemailer                     |
+| Template Engine | Handlebars                     |
+| PDF Generation  | Puppeteer                      |
+| Logging         | Pino                           |
+| Metrics         | Prometheus                     |
+| Tracing         | OpenTelemetry                  |
+| Feature Flags   | OpenFeature                    |
+
+### Database Layer
+| Category         | Technology |
+| ---------------- | ---------- |
+| Primary Database | PostgreSQL |
+| Cache            | Redis      |
+| Search           | OpenSearch |
+| Object Storage   | S3         |
+| Vector DB        | pgvector   |
+| Data Warehouse   | ClickHouse |
+
+### Authentication & Security
+  - JWT Access Token
+  - Refresh Token Rotation
+  - HTTP-only Cookies
+  - CSRF Protection
+  - OAuth2
+  - OpenID Connect
+  - Multi-factor Authentication (MFA)
+  - RBAC
+  -- ABAC
+  - Multi-tenancy
+  - Session Management
+  - API Keys
+  - Rate Limiting
+  - Helmet
+  - CORS
+  - CSP
+  - Secret Management
+  - Audit Loggin
+### API
+  - REST API
+  - OpenAPI
+  - Swagger
+  - API Versioning
+  - Cursor Pagination
+  - Idempotency
+  - Problem Details (RFC 9457)
+  - HATEOAS (optional)
+
+### Devops
+| Category       | Technology                        |
+| -------------- | --------------------------------- |
+| Container      | Docker                            |
+| Orchestration  | Kubernetes                        |
+| Reverse Proxy  | NGINX                             |
+| IaC            | Terraform                         |
+| CI/CD          | GitHub Actions / Azure DevOps     |
+| Secrets        | Azure Key Vault / HashiCorp Vault |
+| Monitoring     | Grafana                           |
+| Metrics        | Prometheus                        |
+| Logging        | Loki                              |
+| Tracing        | Jaeger                            |
+| Error Tracking | Sentry                            |
+
+### Testing
+| Category            | Technology            |
+| ------------------- | --------------------- |
+| Unit Testing        | Jest                  |
+| Integration Testing | Supertest             |
+| Frontend Testing    | React Testing Library |
+| E2E                 | Playwright            |
+| API Testing         | Bruno / Postman       |
+| Contract Testing    | Pact                  |
+| Load Testing        | k6                    |
+
+### Code Quality
+- ESLint
+- Prettier
+- Husky
+- lint-staged
+- Commitlint
+- Conventional Commits
+- Semantic Release
+- Dependency Cruiser
+- Madge
+- SonarQube
+### Documentation
+- Swagger/OpenAPI
+- Storybook
+- Mermaid
+- ADR (Architecture Decision Records)
+- Compodoc
+- Typedoc
+- Package Management
+- npm
+- Turborepo (Monorepo)
+- Changesets
+
+### Cloud
+
+- Microsoft Azure
+- AWS
+
+###  Project Structure
+```text
+workspace/
+│
+├── apps/
+│   ├── web/                 # Next.js
+│   ├── api/                 # NestJS API Gateway
+│   ├── auth-service/
+│   ├── user-service/
+│   ├── organization-service/
+│   ├── tenant-service/
+│   ├── notification-service/
+│   ├── billing-service/
+│   └── worker/
+│
+├── packages/
+│   ├── ui/
+│   ├── types/
+│   ├── config/
+│   ├── eslint-config/
+│   ├── tsconfig/
+│   ├── auth-sdk/
+│   ├── api-client/
+│   ├── logger/
+│   ├── database/
+│   ├── common/
+│   └── validation/
+│
+├── infrastructure/
+│   ├── docker/
+│   ├── kubernetes/
+│   ├── terraform/
+│   └── nginx/
+│
+├── docs/
+├── scripts/
+└── .github/
+```
 
 ---
 
@@ -71,12 +252,31 @@
 
 ```
 .
-├── app/
-│   ├── client/      # Next.js (TailwindCSS + Leaflet)
-│   └── server/      # NestJS (REST API)
-├── packages/
-│   └── database/    # Shared Prisma schema & types
-└── ...
+                   Internet
+                       │
+               Load Balancer
+                       │
+                 NGINX/Ingress
+                       │
+        ┌──────────────┴──────────────┐
+        │                             │
+   Next.js Frontend             NestJS API Gateway
+                                        │
+      ┌─────────────────────────────────┼─────────────────────────────┐
+      │                                 │                             │
+ Authentication                   User Service              Organization Service
+      │                                 │                             │
+      ├─────────────────────────────────┼─────────────────────────────┤
+      │                                 │                             │
+ Tenant Service                 Billing Service           Notification Service
+      │                                 │                             │
+      └─────────────────────────────────┼─────────────────────────────┘
+                                        │
+                        RabbitMQ / Kafka Event Bus
+                                        │
+        ┌──────────────────────────────────────────────────────────────┐
+        │ PostgreSQL │ Redis │ OpenSearch │ S3 │ pgvector │ ClickHouse │
+        └──────────────────────────────────────────────────────────────┘
 ```
 
 ---
