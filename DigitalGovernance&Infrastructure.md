@@ -33,4 +33,4 @@ A single digital ID is powerful — and powerful things can be misused. Privacy 
 - Government services fully digital, rising
 
 ---
-<sub>Part of the [Shonar Bangla](../README.md) roadmap series.</sub>
+<sub>Part of the [Shonar Bangla](./README.md) roadmap series.</sub>

@@ -34,4 +34,4 @@ Renewable buildout competes for land in one of the world's most densely populate
 - Load-shedding hours per year, falling
 
 ---
-<sub>Part of the [Shonar Bangla](../README.md) roadmap series.</sub>
+<sub>Part of the [Shonar Bangla](./README.md) roadmap series.</sub>

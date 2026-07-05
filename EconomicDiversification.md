@@ -34,4 +34,4 @@ None of this survives on good intentions alone. It survives — or doesn't — o
 - Youth employment outside garments, rising
 
 ---
-<sub>Part of the [Shonar Bangla](../README.md) roadmap series.</sub>
+<sub>Part of the [Shonar Bangla](./README.md) roadmap series.</sub>

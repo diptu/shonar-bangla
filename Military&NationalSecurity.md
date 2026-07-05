@@ -34,4 +34,4 @@ Defense budgets are politically sensitive and easy to pad or hide. Regional tens
 - Domestic share of defense procurement, rising
 
 ---
-<sub>Part of the [Shonar Bangla](../README.md) roadmap series.</sub>
+<sub>Part of the [Shonar Bangla](./README.md) roadmap series.</sub>

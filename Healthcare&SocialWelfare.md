@@ -33,4 +33,4 @@ Insurance schemes fail if the financing model isn't sustainable. Rural clinics f
 - Under-5 stunting rate, falling
 
 ---
-<sub>Part of the [Shonar Bangla](../README.md) roadmap series.</sub>
+<sub>Part of the [Shonar Bangla](./README.md) roadmap series.</sub>

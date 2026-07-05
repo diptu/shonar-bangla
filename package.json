@@ -1,0 +1,23 @@
+{
+  "name": "shonar-bangla",
+  "private": true,
+  "packageManager": "npm@11.3.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "dev": "turbo dev",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "eslint": "^9.28.0",
+    "prettier": "^3.5.3",
+    "turbo": "^2.5.4"
+  }
+}

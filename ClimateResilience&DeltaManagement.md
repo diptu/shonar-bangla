@@ -34,4 +34,4 @@ Financing this at scale is the hard part, not the engineering. Embankments need 
 - Mangrove coverage, rising
 
 ---
-<sub>Part of the [Shonar Bangla](../README.md) roadmap series.</sub>
+<sub>Part of the [Shonar Bangla](./README.md) roadmap series.</sub>

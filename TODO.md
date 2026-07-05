@@ -7,25 +7,24 @@ conditions so nothing from Plan.md is lost.
 
 ## Housekeeping (do first)
 
-- [ ] Commit the pending `frontend/` deletion (22 deleted files in the working tree) — `chore: remove old Vite frontend scaffold`
-- [ ] Reconcile `hopeForBangladesh.md` links with actual file locations (`plans/ClimateResilienceAndDeltaManagement.md` vs root `ClimateResilience&DeltaManagement.md`) — **needs a decision** on naming/location convention first
+- [x] Reconcile `hopeForBangladesh.md` links with actual file locations — decided: links fixed to point at existing root `&`-named files; no renames
 
 ## Phase 0 — Repository Foundation
 
-- [ ] Scaffold monorepo skeleton
-  - [ ] Root `package.json` with npm workspaces (`apps/*`, `packages/*`), `private: true`
-  - [ ] `turbo.json` with `build` / `lint` / `dev` pipeline (empty `apps/` for now — real apps arrive in Phases 1–3)
-  - [ ] Pin Node LTS via `.nvmrc` + `engines` field
-- [ ] Root tooling
-  - [ ] Prettier — `.prettierrc` + `.prettierignore`
-  - [ ] ESLint flat config at root (keep shared config inline until a second package justifies extracting `packages/eslint-config`)
-  - [ ] Update `.gitignore` for `node_modules/`, `.turbo/`, `.env`, build output
-- [ ] Environment management (minimal)
-  - [ ] `.env.example` at root
-  - [ ] README note that `.env` is git-ignored
-- [ ] GitHub Actions CI
-  - [ ] `.github/workflows/ci.yml` — `npm ci`, `turbo lint`, `turbo build` on push/PR to `main`
-  - [ ] (Optional) markdown-lint pass over the roadmap essays
+- [x] Scaffold monorepo skeleton
+  - [x] Root `package.json` with npm workspaces (`apps/*`, `packages/*`), `private: true`
+  - [x] `turbo.json` with `build` / `lint` / `dev` pipeline (empty `apps/` for now — real apps arrive in Phases 1–3)
+  - [x] Pin Node LTS via `.nvmrc` (24) + `engines` field
+- [x] Root tooling
+  - [x] Prettier — `.prettierrc` + `.prettierignore` (markdown essays excluded — prose, not code)
+  - [x] ESLint flat config at root (bare `eslint.config.mjs`; plugins arrive with `apps/*`)
+  - [x] Update `.gitignore` — only `.turbo/` was missing; rest already covered
+- [x] Environment management (minimal)
+  - [x] `.env.example` at root
+  - [x] README note that `.env` is git-ignored
+- [x] GitHub Actions CI
+  - [x] `.github/workflows/ci.yml` — `npm ci` + `npx turbo lint build` on push/PR to `main`
+  - [ ] (Optional) markdown-lint pass over the roadmap essays — skipped; add if doc links start rotting
 
 ## Deferred until there's code
 

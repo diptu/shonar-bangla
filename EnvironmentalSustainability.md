@@ -34,4 +34,4 @@ Enforcement is where sustainability policy usually dies — regulations exist to
 - Urban waste diverted from landfill, rising
 
 ---
-<sub>Part of the [Shonar Bangla](../README.md) roadmap series.</sub>
+<sub>Part of the [Shonar Bangla](./README.md) roadmap series.</sub>

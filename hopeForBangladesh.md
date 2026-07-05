@@ -57,14 +57,14 @@ That's the whole plan. That's the whole hope.
 
 ## The Full Plans
 
-- [📈 Economic Diversification](./plans/EconomicDiversification.md)
-- [🌊 Climate Resilience & Delta Management](./plans/ClimateResilienceAndDeltaManagement.md)
-- [🎓 Education & Human Capital](./plans/EducationAndHumanCapital.md)
-- [🌐 Digital Governance & Infrastructure](./plans/DigitalGovernanceAndInfrastructure.md)
-- [🩺 Healthcare & Social Welfare](./plans/HealthcareAndSocialWelfare.md)
-- [🛡️ Military & National Security](./plans/MilitaryAndNationalSecurity.md)
-- [♻️ Environmental Sustainability](./plans/EnvironmentalSustainability.md)
-- [⚡ Energy Security](./plans/EnergySecurity.md)
+- [📈 Economic Diversification](./EconomicDiversification.md)
+- [🌊 Climate Resilience & Delta Management](./ClimateResilience&DeltaManagement.md)
+- [🎓 Education & Human Capital](./Education&HumanCapital.md)
+- [🌐 Digital Governance & Infrastructure](./DigitalGovernance&Infrastructure.md)
+- [🩺 Healthcare & Social Welfare](./Healthcare&SocialWelfare.md)
+- [🛡️ Military & National Security](./Military&NationalSecurity.md)
+- [♻️ Environmental Sustainability](./EnvironmentalSustainability.md)
+- [⚡ Energy Security](./EnergySecurity.md)
 
 ---
 <sub>Part of the [Shonar Bangla](./README.md) roadmap series.</sub>

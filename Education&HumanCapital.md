@@ -33,4 +33,4 @@ Teachers leave for better-paying work if retention isn't taken seriously. Curric
 - Graduate employability rate, rising
 
 ---
-<sub>Part of the [Shonar Bangla](../README.md) roadmap series.</sub>
+<sub>Part of the [Shonar Bangla](./README.md) roadmap series.</sub>

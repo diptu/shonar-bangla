@@ -298,7 +298,7 @@ npm install
 
 **3. Configure environment**
 
-Rename `.env.example` to `.env` and provide your `DATABASE_URL`.
+Copy `.env.example` to `.env` and fill in values as they become required. `.env` is git-ignored — never commit it.
 
 ```bash
 cp .env.example .env

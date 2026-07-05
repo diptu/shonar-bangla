@@ -1,0 +1,8 @@
+node_modules
+.turbo
+dist
+.next
+package-lock.json
+docs/design
+# ponytail: roadmap essays are prose, not code — don't rewrap them
+*.md
