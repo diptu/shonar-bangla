@@ -266,7 +266,4 @@ ETL pipelines for:
 
 ## Long-term Goal
 Turn the repository into a modern, production-grade, data-driven platform with automated data ingestion, rich visualizations, AI-assisted exploration, and enterprise-quality engineering practices.
-"""
-out="/mnt/data/PLAN.md"
-pypandoc.convert_text(md,'md',format='md',outputfile=out,extra_args=['--standalone'])
-print(out)
+
